@@ -12,6 +12,18 @@ import java.util.List;
  * Desktop entry point showing the launch animation without Android dependencies.
  */
 public class LaunchAnimationDesktop extends PApplet {
+    /** Callback executed when the launch sequence finishes. */
+    private Runnable onFinish;
+
+    /**
+     * Launch the animation and run {@code onFinish} when it completes.
+     */
+    public static void start(Runnable onFinish) {
+        LaunchAnimationDesktop sketch = new LaunchAnimationDesktop();
+        sketch.onFinish = onFinish;
+        PApplet.runSketch(new String[]{}, sketch);
+    }
+
     private PFont f;
     private int startTime;
     private int lastTime;
@@ -86,6 +98,9 @@ public class LaunchAnimationDesktop extends PApplet {
         }
 
         if((millis() - startTime) > 8000){
+            if(onFinish != null){
+                onFinish.run();
+            }
             exit();
         }
     }
@@ -145,10 +160,11 @@ public class LaunchAnimationDesktop extends PApplet {
     }
 
     public void settings() {
-        size(1080, 1920);
+        // Landscape orientation for desktop usage
+        size(1920, 1080);
     }
 
     public static void main(String[] args) {
-        PApplet.main(LaunchAnimationDesktop.class.getName());
+        start(null);
     }
 }
