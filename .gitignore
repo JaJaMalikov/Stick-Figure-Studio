@@ -1,1 +1,6 @@
 tmp
+
+# Ignore compiled classes and build outputs
+*.class
+app/build/
+desktop/out/
