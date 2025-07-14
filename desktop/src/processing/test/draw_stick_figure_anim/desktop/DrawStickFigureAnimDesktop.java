@@ -1,15 +1,11 @@
-package processing.test.draw_stick_figure_anim.Animation_Fragments;
-
-import android.os.Bundle;
+package processing.test.draw_stick_figure_anim.desktop;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import processing.core.*;
 
-public class Draw_Stick_Figure_Anim extends PApplet {
-
-
+public class DrawStickFigureAnimDesktop extends PApplet {
 
   int index = 0;
 
@@ -24,7 +20,7 @@ public class Draw_Stick_Figure_Anim extends PApplet {
 
   public void setup(){
 
-    f = createFont("Serif.bold", 28, true);
+    f = createFont("Serif-Bold", 28, true);
 	if (f == null) f = createFont("SansSerif", 28, true);
 
     //determine animation start time
@@ -162,15 +158,11 @@ public class Draw_Stick_Figure_Anim extends PApplet {
 
   }
   public void settings() {
-
-    Bundle arguments = getArguments();
-    size((int) arguments.getDouble("width"), (int) arguments.getDouble("height"));
-//    size(1080, 1000);
-
+    size(1080, 1920); // Fixed size for desktop
   }
 
   static public void main(String[] passedArgs) {
-    String[] appletArgs = new String[] { "Draw_Stick_Figure_Anim" };
+    String[] appletArgs = new String[] { "processing.test.draw_stick_figure_anim.desktop.DrawStickFigureAnimDesktop" };
     if (passedArgs != null) {
       PApplet.main(concat(appletArgs, passedArgs));
     } else {

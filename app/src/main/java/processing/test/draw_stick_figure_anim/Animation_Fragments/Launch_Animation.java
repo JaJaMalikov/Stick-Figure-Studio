@@ -85,7 +85,7 @@ public class Launch_Animation extends PApplet {
             System.out.println(s);
         }
 
-        f = createFont("Serif-Bold", 28);
+        f = createFont("Serif.bold", 28);
         textFont(f);
 
         background = new Drawer.ColorVector(255, 255, 0);
