@@ -5,6 +5,9 @@ import Util.Drawer;
 import processing.core.PApplet;
 import processing.core.PFont;
 
+// LaunchAnimation transitions to a simple menu implemented below
+import processing.test.draw_stick_figure_anim.desktop.MenuDesktop;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -86,6 +89,9 @@ public class LaunchAnimationDesktop extends PApplet {
         }
 
         if((millis() - startTime) > 8000){
+            // start the simple menu when the animation finishes
+            PApplet.main(MenuDesktop.class.getName());
+            // close this sketch window but keep the JVM running
             exit();
         }
     }
