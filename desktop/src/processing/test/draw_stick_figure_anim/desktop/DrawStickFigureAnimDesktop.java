@@ -158,7 +158,8 @@ public class DrawStickFigureAnimDesktop extends PApplet {
 
   }
   public void settings() {
-    size(1080, 1920); // Fixed size for desktop
+    // Use landscape orientation when running on the desktop
+    size(1920, 1080);
   }
 
   static public void main(String[] passedArgs) {
