@@ -1,0 +1,26 @@
+plugins {
+    id 'application'
+}
+
+repositories {
+    mavenCentral()
+    maven {
+        url 'https://jogamp.org/deployment/maven/'
+    }
+}
+
+dependencies {
+    implementation 'org.processing:core:4.4.4'
+}
+
+application {
+    mainClass = 'desktop.LaunchAnimationDesktop'
+}
+
+sourceSets {
+    main {
+        java {
+            srcDirs += ['../app/src/main/java/Util', '../app/src/main/java/drawableObjects']
+        }
+    }
+}
