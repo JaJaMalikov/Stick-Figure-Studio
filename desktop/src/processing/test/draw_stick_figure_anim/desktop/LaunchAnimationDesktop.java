@@ -2,6 +2,7 @@ package processing.test.draw_stick_figure_anim.desktop;
 
 import DrawableObjects.StickFigure;
 import Util.Drawer;
+import processing.test.draw_stick_figure_anim.desktop.DrawStickFigureAnimDesktop;
 import processing.core.PApplet;
 import processing.core.PFont;
 
@@ -86,6 +87,7 @@ public class LaunchAnimationDesktop extends PApplet {
         }
 
         if((millis() - startTime) > 8000){
+            PApplet.main(DrawStickFigureAnimDesktop.class.getName());
             exit();
         }
     }
@@ -145,7 +147,8 @@ public class LaunchAnimationDesktop extends PApplet {
     }
 
     public void settings() {
-        size(1080, 1920);
+        // Desktop version runs in landscape mode
+        size(1920, 1080);
     }
 
     public static void main(String[] args) {
